@@ -1,0 +1,8 @@
+{
+  "name": "ProtoWallet",
+  "description": "ProtoWallet — a practice crypto wallet for complete beginners. Learn to send, receive, and swap with zero real money.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

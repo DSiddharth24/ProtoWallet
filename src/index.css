@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper text-graphite font-body antialiased transition-colors duration-200;
+  }
+
+  .dark body,
+  body.dark {
+    @apply bg-night text-paper;
+  }
+
+  /* Focus ring: Proto Teal */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-proto-teal focus-visible:ring-offset-2;
+  }
+
+  /* Input base styling */
+  input, select, textarea {
+    @apply rounded-btn border border-graphite/20 bg-transparent px-3 py-2 font-body text-graphite outline-none transition-colors;
+    @apply focus:border-proto-teal focus:ring-1 focus:ring-proto-teal;
+    @apply dark:border-paper/20 dark:text-paper dark:focus:border-proto-teal;
+  }
+}
+
+@layer utilities {
+  /* 3D perspective for card flipping */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Hide scrollbars for mobile card swiper */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  /* Card hover lift — used on quick-action buttons */
+  .card-lift {
+    @apply transition-all duration-150;
+  }
+  .card-lift:hover,
+  .card-lift:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 156, 140, 0.12);
+    @apply border-proto-teal;
+  }
+  .card-lift:active {
+    transform: translateY(0);
+  }
+}
+
+/* ── Skeleton shimmer ── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, transparent 0%, rgba(14,156,140,0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  @apply rounded;
+}
+
+/* ── Confidence Ring coral pulse ── */
+@keyframes coral-pulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 107, 74, 0)); }
+  50% { filter: drop-shadow(0 0 12px rgba(255, 107, 74, 0.5)); }
+}
+.coral-pulse {
+  animation: coral-pulse 0.6s ease-in-out;
+}
+
+/* ── Staggered list entrance ── */
+@keyframes stagger-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stagger-in {
+  animation: stagger-in 0.3s ease-out both;
+}
+
+/* ── Success flash ── */
+@keyframes success-flash {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 181, 115, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 181, 115, 0); }
+}
+.success-flash {
+  animation: success-flash 0.8s ease-out;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-graphite/15 rounded-full dark:bg-paper/15; }
+::-webkit-scrollbar-thumb:hover { @apply bg-graphite/30 dark:bg-paper/30; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .coral-pulse,
+  .stagger-in,
+  .success-flash,
+  .skeleton {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0s !important;
+  }
+}
