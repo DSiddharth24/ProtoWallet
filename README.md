@@ -2,6 +2,8 @@
 
 ProtoWallet is a modern, interactive Web3 wallet simulator and crypto asset management console. Designed with executive aesthetics, fluid card deck animations, dynamic market tickers, and a built-in transaction engine, ProtoWallet delivers an intuitive playground for exploring decentralized asset management, token swaps, security best practices, and multi-network analytics.
 
+🌐 **Live Demo**: [https://proto-wallet-1.vercel.app/#/](https://proto-wallet-1.vercel.app/#/)
+
 ---
 
 ## ✨ Features
@@ -47,13 +49,12 @@ ProtoWallet is a modern, interactive Web3 wallet simulator and crypto asset mana
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Deployment & Installation
 
-### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm** or **bun** / **yarn**
+### Live Application
+Experience the live application online at [https://proto-wallet-1.vercel.app/#/](https://proto-wallet-1.vercel.app/#/).
 
-### Installation
+### Building from Source
 
 1. **Clone the repository**:
    ```bash
@@ -66,19 +67,9 @@ ProtoWallet is a modern, interactive Web3 wallet simulator and crypto asset mana
    npm install
    ```
 
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**:
+3. **Build for production**:
    ```bash
    npm run build
-   ```
-
-5. **Preview production build**:
-   ```bash
-   npm run start
    ```
 
 ---
