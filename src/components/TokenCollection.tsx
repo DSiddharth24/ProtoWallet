@@ -50,7 +50,7 @@ export const TokenCollection: React.FC<TokenCollectionProps> = ({
         <CardSwap
           cardDistance={60}
           verticalDistance={70}
-          delay={5000}
+          delay={2500}
           pauseOnHover={false}
         >
           {tokens.map((token, idx) => {

@@ -28,7 +28,7 @@ export interface CardSwapProps {
 export const CardSwap: React.FC<CardSwapProps> = ({
   cardDistance = 40,
   verticalDistance = 40,
-  delay = 5000,
+  delay = 2500,
   pauseOnHover = true,
   children,
   className = '',
